@@ -6,7 +6,7 @@
     "baseUrl": "./src"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts", "chat-server.ts"
   ],
   "exclude": [
     "node_modules"
