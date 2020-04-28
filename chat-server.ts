@@ -1,6 +1,5 @@
 import * as express from 'express';
 import { createServer, Server} from 'http';
-import { createHash } from 'crypto';
 
 export class ChatServer {
     public static readonly PORT:number = 5000;
