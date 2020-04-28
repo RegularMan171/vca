@@ -1,5 +1,5 @@
-import * as express from 'express';
 import { createServer, Server} from 'http';
+import * as express from 'express';
 
 export class ChatServer {
     public static readonly PORT:number = 5000;
