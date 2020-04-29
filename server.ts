@@ -1,10 +1,8 @@
 import { ChatServer } from './chat-server';
+import { Routes } from './routes';
 
 let app = new ChatServer().getApp();
-
-
-app.get('/', (request, response) => {
-    response.send('Hello, world!');
-});
+const route = new Routes(app);
+route.getRoutes();
 
 export {app};
