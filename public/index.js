@@ -1,4 +1,4 @@
-var socket = io.connect('https://localhost:5000');
+var socket = io.connect('http://localhost:5000');
 
 socket.on('add-users', function(data) {
     for(var i=0; i<data.users.length; i++) {
