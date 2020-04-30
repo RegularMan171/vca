@@ -26,6 +26,14 @@ export class ChatServer {
         this.port = process.env.PORT || ChatServer.PORT;
     }
 
+    private createServer(): void {
+        this.server = createServer(this.app);
+    }
+
+    private sockets(): void {
+        this.io = socket(this.server);
+    }
+
     private listen(): void {
         this.server.listen(this.port, () => {
             console.log("Running server on port %s", this.port);
@@ -33,16 +41,8 @@ export class ChatServer {
         this.io.on('connection', (socket) => {
             socket.broadcast.emit('add-users', {
                 users: [socket.id]
-            })
-        })
-    }
-
-    private createServer(): void {
-        this.server = createServer(this.app);
-    }
-
-    private sockets(): void {
-        this.io = socket(this.server);
+            });
+        });
     }
 
     public getApp(): express.Application {
